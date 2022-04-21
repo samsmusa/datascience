@@ -26,10 +26,14 @@ def Binomial(string,checkParam,probability, repeat):
                 }
             )
             
+    expected_value = repeat * probability
+    
+    print("-------------------------------------------------------------")
+    print(f"In {repeat} days we get {expected_value} days for {probability*100}% desire output")
+    print("-------------------------------------------------------------")
+    print(f"your average number of successes is {expected_value} in {repeat} trials if you repeat the trials many times.")
+    print("-------------------------------------------------------------")
+            
     plt.bar(ge.keys(),ge.values())
     plt.show()
-    return [list(gender),ge]
-
-[a,c] = Binomial('GB', checkParam="B",probability=0.4,repeat=20)
-
-print(c)
+    return [list(gender),ge, expected_value]
